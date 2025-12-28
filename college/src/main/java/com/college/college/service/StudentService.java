@@ -46,6 +46,11 @@ public class StudentService {
         addmissionRecordRepository.save(addmissionRecord);
         return student;
     }
+    
+    @Transactional
+    public List<Student> getStudent(){
+        return studentRepo.findAll();
+    }
 
 
 }

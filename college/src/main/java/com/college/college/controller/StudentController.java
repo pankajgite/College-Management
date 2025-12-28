@@ -10,6 +10,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/student")
 @RequiredArgsConstructor
@@ -21,6 +23,11 @@ public class StudentController {
     @GetMapping("/test")
     public String test(){
         return "this is test";
+    }
+
+    @GetMapping
+    public List<Student> getStudents(){
+        return studentService.getStudent();
     }
 
     @PostMapping("/addStudent")
